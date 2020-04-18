@@ -1,15 +1,13 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 PYTHON_COMPAT=( python3_6 python3_7 )
-inherit eutils gnome2 distutils-r1 virtualx
+inherit eutils distutils-r1 virtualx xdg
 
 DESCRIPTION="Multiple GNOME terminals in one window"
 HOMEPAGE="https://github.com/gnome-terminator/terminator"
-_GIT="5151db48b1debd484068079658d2c5793ba6f2b6"
-SRC_URI="https://github.com/gnome-terminator/terminator/archive/${_GIT}.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/${PN}-${_GIT}"
+SRC_URI="https://github.com/gnome-terminator/terminator/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
