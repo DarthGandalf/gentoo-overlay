@@ -11,13 +11,12 @@ HOMEPAGE="https://openmw.org/"
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI=${EGIT_REPO_URI:-"https://github.com/OpenMW/openmw.git"}
-	SRC_URI=""
+	SRC_URI="https://dev.gentoo.org/~jstein/dist/openmw-9999_floattest.patch"
 else
 	SRC_URI="https://github.com/OpenMW/openmw/archive/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 	S="${WORKDIR}/${PN}-${P}"
 fi
-
 
 LICENSE="GPL-3 MIT BitstreamVera ZLIB"
 SLOT="0"
@@ -59,6 +58,8 @@ BDEPEND="
 		dev-cpp/gtest
 	)
 "
+
+PATCHES=("${DISTDIR}/openmw-9999_floattest.patch")
 
 src_prepare() {
 	cmake_src_prepare
