@@ -20,6 +20,7 @@ IUSE="alsa pulseaudio"
 DEPEND="
 	alsa? ( media-libs/alsa-lib )
 	pulseaudio? ( media-sound/pulseaudio )
+	virtual/pkgconfig
 "
 
 src_configure() {
