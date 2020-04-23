@@ -4,7 +4,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_{6,7,8} )
-inherit xdg distutils-r1 virtualx
+inherit distutils-r1 virtualx xdg-utils
 
 DESCRIPTION="Multiple GNOME terminals in one window"
 HOMEPAGE="https://github.com/gnome-terminator/terminator"
@@ -35,14 +35,21 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-1.91-desktop.patch
 )
 
+src_prepare() {
+	xdg_environment_reset
+	distutils-r1_src_prepare
+}
+
 python_test() {
 	virtx esetup.py test
 }
 
 pkg_postinst() {
-	xdg_pkg_postinst
+	xdg_desktop_database_update
+	xdg_icon_cache_update
 }
 
 pkg_postrm() {
-	xdg_pkg_postrm
+	xdg_desktop_database_update
+	xdg_icon_cache_update
 }
