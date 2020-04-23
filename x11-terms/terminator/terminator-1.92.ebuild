@@ -13,7 +13,7 @@ SRC_URI="https://github.com/gnome-terminator/terminator/releases/download/v${PV}
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="dbus"
+IUSE="dbus +libnotify"
 
 RDEPEND="
 	>=dev-libs/glib-2.32:2
@@ -25,6 +25,7 @@ RDEPEND="
 	>=x11-libs/gtk+-3.16:3
 	x11-libs/vte:2.91[introspection]
 	dbus? ( sys-apps/dbus )
+	libnotify? ( x11-libs/libnotify[introspection] )
 "
 BDEPEND="
 	dev-util/intltool
