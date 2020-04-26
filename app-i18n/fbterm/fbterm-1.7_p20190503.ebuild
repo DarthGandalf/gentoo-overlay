@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-inherit autotools fcaps
+inherit autotools fcaps toolchain-funcs
 
 DESCRIPTION="Fast terminal emulator for the Linux framebuffer"
 HOMEPAGE="https://github.com/gjedeer/fbterm"
@@ -39,6 +39,10 @@ src_configure() {
 	econf \
 		$(use_enable gpm) \
 		$(use_enable video_cards_vesa vesa)
+}
+
+src_compile() {
+	emake AR="$(tc-getAR)"
 }
 
 src_install() {
