@@ -8,7 +8,7 @@ inherit cmake
 DESCRIPTION="Plays sound received from network or from a QEMU Windows VM"
 HOMEPAGE="https://github.com/duncanthrax/scream"
 
-_GIT="46837d75092d85347577c0d97a89f227e8eebe48"
+_GIT="2d47b33a19644287d2a4c0d5139e7f0a76aa9aca"
 SRC_URI="https://github.com/duncanthrax/scream/archive/${_GIT}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/scream-${_GIT}/Receivers/unix"
 
