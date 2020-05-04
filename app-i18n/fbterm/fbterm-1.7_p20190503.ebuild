@@ -7,8 +7,10 @@ inherit autotools fcaps toolchain-funcs
 
 DESCRIPTION="Fast terminal emulator for the Linux framebuffer"
 HOMEPAGE="https://github.com/gjedeer/fbterm"
-SRC_URI="https://github.com/gjedeer/fbterm/archive/ccea326dd73f4d6b6442fde7ba7c2be9cd35c6df.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/fbterm-ccea326dd73f4d6b6442fde7ba7c2be9cd35c6df"
+
+MY_COMMIT="ccea326dd73f4d6b6442fde7ba7c2be9cd35c6df"
+SRC_URI="https://github.com/gjedeer/fbterm/archive/${MY_COMMIT}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/fbterm-${MY_COMMIT}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -32,7 +34,7 @@ FILECAPS=(
 
 src_prepare() {
 	# bug #648472
-	sed -i "s/terminfo//" Makefile.am
+	sed -i "s/terminfo//" Makefile.am || die "Can't remove terminfo"
 
 	default
 	eautoreconf
