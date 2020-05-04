@@ -12,10 +12,9 @@ SRC_URI="https://launchpad.net/shutter/0.9x/${PV}/+download/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="drawing upload"
+IUSE="minimal"
 
-DEPEND="dev-lang/perl
-	drawing? ( dev-perl/Goo-Canvas )
+RDEPEND="dev-lang/perl
 	dev-perl/libxml-perl
 	dev-perl/gnome2-canvas
 	dev-perl/gnome2-perl
@@ -37,17 +36,21 @@ DEPEND="dev-lang/perl
 	dev-perl/X11-Protocol
 	dev-perl/XML-Simple
 	dev-perl/libwww-perl
-	upload? (
+	virtual/imagemagick-tools[perl]
+	!minimal? (
+		dev-libs/libappindicator
+		dev-perl/Goo-Canvas
 		dev-perl/JSON-MaybeXS
 		dev-perl/Net-OAuth
 		dev-perl/Path-Class
+		media-libs/exiftool
 	)
-	virtual/imagemagick-tools[perl]"
+"
 
 src_prepare() {
 	default
 
-	use drawing || eapply "${FILESDIR}"/${PN}-0.90-goocanvas.patch
+	use minimal && eapply "${FILESDIR}"/${PN}-0.90-goocanvas.patch
 
 	#Fix tray icon because it doesn't pick the right icon using various themes
 	sed -i -e "/\$tray->set_from_icon_name/s:set_from_icon_name:set_from_file:" \
@@ -77,13 +80,6 @@ src_install() {
 pkg_postinst() {
 	xdg_icon_cache_update
 	xdg_desktop_database_update
-
-	elog ""
-	elog "These optional dependencies provide additional functions:"
-	elog ""
-	elog "- media-libs/exiftool            : Writing Exif information"
-	elog "- dev-libs/libappindicator       : Status icon support for Unity"
-	elog""
 }
 
 pkg_postrm() {
