@@ -29,6 +29,7 @@ DEPEND="
 BDEPEND="
 	virtual/pkgconfig
 "
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(
