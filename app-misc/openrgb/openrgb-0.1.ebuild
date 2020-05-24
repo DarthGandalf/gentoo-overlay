@@ -25,6 +25,7 @@ DEPEND="
 	dev-qt/qtwidgets:5
 	virtual/libusb
 "
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	eqmake5
