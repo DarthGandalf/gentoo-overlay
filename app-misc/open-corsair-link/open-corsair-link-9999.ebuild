@@ -16,6 +16,7 @@ KEYWORDS=""
 DEPEND="
 	virtual/libusb
 "
+RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin OpenCorsairLink.elf
