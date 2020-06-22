@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit desktop qmake-utils
+inherit desktop qmake-utils udev
 
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
@@ -37,6 +37,7 @@ src_install() {
 	dobin OpenRGB
 	doicon qt/OpenRGB.png
 	make_desktop_entry OpenRGB OpenRGB OpenRGB
+	udev_dorules 99-openrgb.rules
 }
 
 pkg_postinst() {
