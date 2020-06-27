@@ -37,7 +37,7 @@ src_install() {
 	dobin OpenRGB
 	doicon qt/OpenRGB.png
 	make_desktop_entry OpenRGB OpenRGB OpenRGB
-	udev_dorules 99-openrgb.rules
+	udev_dorules 60-openrgb.rules
 }
 
 pkg_postinst() {
