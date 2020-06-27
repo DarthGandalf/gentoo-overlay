@@ -5,4 +5,7 @@
 		<email>alexey+gentoo@asokolov.org</email>
 		<name>Alexey Sokolov</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">YoRyan/nuxhash</remote-id>
+	</upstream>
 </pkgmetadata>
