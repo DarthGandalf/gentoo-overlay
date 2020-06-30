@@ -65,12 +65,13 @@ BDEPEND="
 
 PATCHES=(
 	"${FILESDIR}"/openmw-0.46.0-mygui-license.patch
-	# https://gitlab.com/OpenMW/openmw/-/merge_requests/163
-	"${DISTDIR}"/openmw-0.46.0-floattest.patch
 	"${FILESDIR}"/openmw-0.46.0-recastnavigation.patch
 	"${FILESDIR}"/openmw-0.46.0-missing-include.patch
 	"${FILESDIR}"/openmw-0.46.0-fix-cast.patch
 	"${FILESDIR}"/openmw-0.46.0-nifbullet-test.patch
+	# https://gitlab.com/OpenMW/openmw/-/merge_requests/163
+	"${DISTDIR}"/openmw-0.46.0-floattest.patch
+	"${FILESDIR}"/openmw-0.46.0-floattest2.patch
 )
 
 src_prepare() {
@@ -99,9 +100,9 @@ src_configure() {
 		-DBUILD_OPENCS=$(usex devtools $(usex qt5))
 		-DBUILD_WIZARD=$(usex qt5)
 		-DBUILD_UNITTESTS=$(usex test)
-		-DGLOBAL_DATA_PATH=/usr/share
-		-DICONDIR="/usr/share/icons/hicolor/256x256/apps"
-		-DMORROWIND_DATA_FILES="/usr/share/morrowind-data"
+		-DGLOBAL_DATA_PATH="${EPREFIX}/usr/share"
+		-DICONDIR="${EPREFIX}/usr/share/icons/hicolor/256x256/apps"
+		-DMORROWIND_DATA_FILES="${EPREFIX}/usr/share/morrowind-data"
 		-DUSE_SYSTEM_TINYXML=ON
 		-DDESIRED_QT_VERSION=5
 	)

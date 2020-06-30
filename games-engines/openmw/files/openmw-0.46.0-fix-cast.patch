@@ -1,3 +1,5 @@
+Fixes build on ~arch system, patch from upstream, to be dropped for 0.47
+
 From 208a50340db5506dded60c05272ce9692773baa9 Mon Sep 17 00:00:00 2001
 From: elsid <elsid.mail@gmail.com>
 Date: Mon, 13 Apr 2020 20:45:07 +0200

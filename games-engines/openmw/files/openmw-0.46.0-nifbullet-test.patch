@@ -1,3 +1,5 @@
+Fixes test on i686 system, patch from upstream, to be dropped for 0.47
+
 From 14d0ca4cd3e9aa9e329590913d5f8fb55077587d Mon Sep 17 00:00:00 2001
 From: elsid <elsid.mail@gmail.com>
 Date: Sun, 25 Nov 2018 11:42:26 +0300
