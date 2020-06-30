@@ -69,6 +69,7 @@ PATCHES=(
 	"${DISTDIR}"/openmw-0.46.0-floattest.patch
 	"${FILESDIR}"/openmw-0.46.0-recastnavigation.patch
 	"${FILESDIR}"/openmw-0.46.0-missing-include.patch
+	"${FILESDIR}"/openmw-0.46.0-fix-cast.patch
 )
 
 src_prepare() {
