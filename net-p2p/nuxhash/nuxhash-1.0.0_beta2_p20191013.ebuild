@@ -11,10 +11,12 @@ DESCRIPTION="NiceHash cryptocurrency mining client for Linux"
 HOMEPAGE="https://github.com/YoRyan/nuxhash"
 
 SRC_URI="https://github.com/YoRyan/nuxhash/archive/33e9a095a41a6828959927f867efe4d2df398ede.tar.gz -> ${P}.tar.gz"
+# Nuxhash itself is GPL, but it downloads the excavator proprietary blob on startup
 LICENSE="GPL-3 excavator-EULA"
 SLOT="0"
 IUSE="gui"
 KEYWORDS="~amd64"
+RESTRICT="test"
 
 RDEPEND="
 	dev-libs/libbsd
@@ -37,4 +39,10 @@ PATCHES=(
 python_prepare_all() {
 	use gui || eapply "${FILESDIR}/nuxhash-1.0.0_beta2_p20191013-remove-gui.patch"
 	distutils-r1_python_prepare_all
+}
+
+python_test() {
+	for t in tests/test_*.py; do
+		"${EPYTHON}" "${t}" || die
+	done
 }
