@@ -14,7 +14,7 @@ if [[ ${PV} == *9999* ]]; then
 else
 	SRC_URI="
 		https://github.com/OpenMW/openmw/archive/${P}.tar.gz
-		http://people.znc.in/~darthgandalf/openmw-0.46.0-floattest.patch
+		https://gitlab.com/OpenMW/openmw/-/merge_requests/163.patch -> ${P}-floattest.patch
 	"
 	KEYWORDS="~amd64 ~x86"
 	S="${WORKDIR}/${PN}-${P}"

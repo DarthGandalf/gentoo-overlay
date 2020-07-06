@@ -91,9 +91,9 @@ src_configure() {
 		-DBUILD_OPENCS=$(usex devtools $(usex qt5))
 		-DBUILD_WIZARD=$(usex qt5)
 		-DBUILD_UNITTESTS=$(usex test)
-		-DGLOBAL_DATA_PATH=/usr/share
-		-DICONDIR="/usr/share/icons/hicolor/256x256/apps"
-		-DMORROWIND_DATA_FILES="/usr/share/morrowind-data"
+		-DGLOBAL_DATA_PATH="${EPREFIX}/usr/share"
+		-DICONDIR="${EPREFIX}/usr/share/icons/hicolor/256x256/apps"
+		-DMORROWIND_DATA_FILES="${EPREFIX}/usr/share/morrowind-data"
 		-DUSE_SYSTEM_TINYXML=ON
 		-DDESIRED_QT_VERSION=5
 	)
