@@ -1,0 +1,8 @@
+# Alexey Sokolov <alexey+gentoo@asokolov.org> (2020-08-27)
+# Retired upstream:
+# https://github.com/audiohacked/OpenCorsairLink/issues/243
+# The suggested replacement is app-misc/liquidctl
+# Removal in 30 days.
+app-misc/open-corsair-link
+
+
