@@ -29,6 +29,7 @@ RDEPEND="
 	dev-util/binaryen
 	net-libs/nodejs
 	sys-devel/clang:12[llvm_targets_WebAssembly]
+	>=sys-devel/lld-12
 	virtual/jre
 "
 BDEPEND="
