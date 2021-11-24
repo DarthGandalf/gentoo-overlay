@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2020-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # This is a horrible ebuild. Don't use it as an example how to write one.
@@ -21,7 +21,7 @@ SRC_URI="https://github.com/emscripten-core/emscripten/archive/${PV}.tar.gz -> $
 
 LICENSE="MIT" # TODO: or illinois one
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 RESTRICT="network-sandbox test"
 
