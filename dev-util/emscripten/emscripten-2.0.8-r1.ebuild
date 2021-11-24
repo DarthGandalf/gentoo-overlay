@@ -57,5 +57,5 @@ src_install() {
 	tools/create_entry_points.py || die
 	insinto "/usr/$(get_libdir)/emscripten"
 	doins -r .
-	fperms +x "/usr/$(get_libdir)/emscripten"/*
+	chmod +x "${ED}/usr/$(get_libdir)/emscripten"/* || die
 }
