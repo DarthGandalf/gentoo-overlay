@@ -15,7 +15,7 @@ import os
 # by emscripten itself.
 EMSCRIPTEN_ROOT = os.path.expanduser(os.getenv('EMSCRIPTEN', 'GENTOO_PREFIX/usr/GENTOO_LIB/emscripten')) # directory
 
-LLVM_ROOT = os.path.expanduser(os.getenv('LLVM', 'GENTOO_PREFIX/usr/lib/llvm/11/bin')) # directory
+LLVM_ROOT = os.path.expanduser(os.getenv('LLVM', 'GENTOO_PREFIX/usr/lib/llvm/GENTOO_LLVM_VERSION/bin')) # directory
 BINARYEN_ROOT = os.path.expanduser(os.getenv('BINARYEN', 'GENTOO_PREFIX/usr')) # directory
 
 # Location of the node binary to use for running the JS parts of the compiler.
