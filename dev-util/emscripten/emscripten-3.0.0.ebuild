@@ -4,7 +4,6 @@
 # This is a horrible ebuild. Don't use it as an example how to write one.
 # TODO:
 # * remove network access from npm ci
-# * use supported versions of LLVM and binaryen (current it requires git head)
 # * enable tests
 # * use the python eclass properly
 # * fix many QA issues
