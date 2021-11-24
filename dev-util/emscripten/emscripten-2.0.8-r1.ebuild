@@ -12,7 +12,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{7,8} )
+PYTHON_COMPAT=( python3_{7,8,9} )
 inherit python-single-r1
 
 DESCRIPTION="Emscripten is a complete compiler toolchain to WebAssembly, using LLVM"
@@ -57,5 +57,5 @@ src_install() {
 	tools/create_entry_points.py || die
 	insinto "/usr/$(get_libdir)/emscripten"
 	doins -r .
-	fperms +x "/usr/$(get_libdir)/emscripten"/*
+	chmod +x "${ED}/usr/$(get_libdir)/emscripten"/* || die
 }
