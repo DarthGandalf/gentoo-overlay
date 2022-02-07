@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -8,7 +8,6 @@ inherit cmake
 MY_COMMIT="1e52a8048cdc0b13b829dccfc1172768af3663a0"
 DESCRIPTION="A minimalist argument handler for C++"
 HOMEPAGE="https://github.com/adishavit/argh"
-SRC_URI="https://github.com/WebAssembly/binaryen/archive/version_${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/adishavit/argh/archive/${MY_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
