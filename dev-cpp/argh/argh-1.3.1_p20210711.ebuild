@@ -18,8 +18,8 @@ S="${WORKDIR}/argh-${MY_COMMIT}"
 
 _src_configure() {
 	local mycmakeargs=(
-		-DENABLE_WERROR=no
-		-DBUILD_LLVM_DWARF=no
+		-DBUILD_EXAMPLES=no
+		-DBUILD_TESTS=yes
 	)
 	cmake_src_configure
 }
