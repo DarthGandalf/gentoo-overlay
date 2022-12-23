@@ -7,3 +7,4 @@ description=""
 command=/usr/bin/netclient
 command_args="daemon"
 command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
