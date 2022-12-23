@@ -17,6 +17,8 @@ KEYWORDS="~amd64 ~arm ~arm64"
 
 S="${WORKDIR}"
 
+QA_PREBUILT="*"
+
 src_prepare() {
 	cp "${DISTDIR}/${A}" netclient
 	chmod +x ./netclient
