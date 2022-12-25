@@ -1,0 +1,14 @@
+diff --git a/sqfssync/sqfssync.py b/sqfssync/sqfssync.py
+index a6f62e6..acf917c 100644
+--- a/sqfssync/sqfssync.py
++++ b/sqfssync/sqfssync.py
+@@ -64,9 +64,6 @@ class SqfsSync(NewBase):
+     @property
+     def mount_options(self):
+         opts = [
+-            "uid=%s" % self.uid,
+-            "gid=%s" % self.gid,
+-            "mode=%s" % self.mode
+         ]
+         extra = self.repo.module_specific_options.get("sync-sqfs-options")
+         if extra:
